@@ -123,18 +123,8 @@ export PATH=$PATH:/usr/local/sbin
 ```
 export PATH=$PATH:/opt/homebrew/sbin
 ```
-### 4. Install the following Scala packages.
 
-#### For Windows, run the following commands in the CLI, Powershell or Git Bash terminal:
-```
-sbt addSbtPlugin "com.thesamet" % "sbt-protoc" % "1.6"
-```
-#### For macOS, run the following commands in the Terminal:
-```
-sbt addSbtPlugin "com.thesamet" % "sbt-protoc" % "1.6"
-```
-
-### 5. Install IntelliJ with the Scala plugin.
+### 4. Install IntelliJ with the Scala plugin.
 * Please visit the following website for more detailed instructions: https://www.jetbrains.com/help/idea/discover-intellij-idea-for-scala.html
 
 ## Bug tracking
