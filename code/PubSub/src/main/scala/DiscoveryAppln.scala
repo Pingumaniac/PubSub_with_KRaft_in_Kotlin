@@ -1,4 +1,4 @@
-import RaftConsensusMW.LogEntry
+import EtcdConsensusMW.LogEntry
 
 import scala.collection.mutable
 

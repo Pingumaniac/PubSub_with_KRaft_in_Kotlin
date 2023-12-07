@@ -2,7 +2,7 @@ import com.rabbitmq.client._
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 
-object RaftNodeMW {
+object EtcdNodeMW {
   private var connection: Connection = _
   private var channel: Channel = _
   private var isLeader: Boolean = false

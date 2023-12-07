@@ -1,10 +1,10 @@
 import scala.util.Try
 
-object RaftNodeAppln {
+object EtcdNodeAppln {
   private var currentNodeState: NodeState = Follower
   private val logger = org.slf4j.LoggerFactory.getLogger(getClass)
 
-  case class RaftNodeConfig(nodeId: String, peers: Set[String], leaderId: Option[String])
+  case class EtcdNodeConfig(nodeId: String, peers: Set[String], leaderId: Option[String])
   sealed trait NodeState
   case object Leader extends NodeState
   case object Follower extends NodeState
@@ -14,7 +14,7 @@ object RaftNodeAppln {
   def initialize_node(nodeConfig: RaftNodeConfig): Unit = {
     logger.info("Initializing RAFT node with config: " + nodeConfig)
     // Initialize RaftNodeMW and other necessary components
-    RaftNodeMW.init()
+    EtcdNodeMW.init()
     // Additional initialization logic based on nodeConfig
   }
 
@@ -23,7 +23,7 @@ object RaftNodeAppln {
     logger.info("Propagating update: " + update)
     if (currentNodeState == Leader) {
       // Logic to append update to Raft log
-      RaftNodeMW.handle_log_replication()
+      EtcdNodeMW.handle_log_replication()
     } else {
       logger.warn("Node is not a leader. Cannot propagate update.")
     }

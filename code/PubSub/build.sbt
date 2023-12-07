@@ -10,6 +10,7 @@ lazy val root = (project in file("."))
       "com.rabbitmq" % "amqp-client" % "5.16.0",
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.15.1",
       "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.14.2",
-      "org.slf4j" % "slf4j-api" % "2.0.5"
+      "org.slf4j" % "slf4j-api" % "2.0.5",
+      "io.etcd" %% "jetcd-core" % "0.7.0",
     )
   )
