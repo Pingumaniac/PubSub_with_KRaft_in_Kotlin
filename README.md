@@ -41,9 +41,9 @@ CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 
 ## Motivation of the project
 * Programming in low-level languages such as C, C++, Rust and Go is more challenging than in high-level languages such as Julia, Java, TypeScript and Ruby.
-* I have realized that it is possible to code in a different way that results in a code is as efficient as C.
-* My SWE methodology is not exactly same, though it is based on Xiaoming Liu et al.'s "Building reliable, high-performance communication systems from components" paper.
-* Have chosen Raft consensus algorithm in distributed systems, as implementing consensus algorithms for distributed systems is difficult, especially in low-level languages.
+* I have realized that it is possible to code differently, resulting in a code that is as efficient as C/C++.
+* My SWE methodology is different, though it is based on Xiaoming Liu et al.'s "Building reliable, high-performance communication systems from components" paper.
+* Have chosen the Raft consensus algorithm in distributed systems, as implementing consensus algorithms for distributed systems is difficult, especially in low-level languages.
 
 ## Technologies Used
 1. Petri-nets
@@ -57,7 +57,7 @@ CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 ### Method 1:
 1. Open the main page for our GitHub repository: https://github.com/Pingumaniac/PubSub_with_Raft_in_Scala
 2. Click the following button: <img src = "https://user-images.githubusercontent.com/63883314/115416097-69ade280-a232-11eb-8401-8c41362ab4c2.png" width="44" height="14">
-3. Click 'Download ZIP' option.
+3. Click the 'Download ZIP' option.
 4. Unzip the folder.
 
 ### Method 2:
