@@ -4,5 +4,9 @@ ThisBuild / scalaVersion := "3.3.1"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "PubSub"
+    name := "PubSub",
+    libraryDependencies ++= Seq(
+      // Add RabbitMQ library dependency
+      "com.rabbitmq" % "amqp-client" % "5.16.0"
+    )
   )
