@@ -34,16 +34,16 @@ CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 3. Generate the initial, unoptimized Scala code in the RPC design pattern. This approach promotes a cleaner separation of concerns, improves anonymity and fault tolerance, and ultimately makes the system more robust and scalable.
 
 ### Future work
-* The 4-6th original goal will be done as future work (extension) during the Winter 2024 break with Professor Abhishek Dubey.
+* The 3-6th original goal will be done as future work (extension) during the Winter 2024 break with Professor Abhishek Dubey.
 * More complex testing methods (e.g., writing unit tests, setting up Docker, Kubernetes) can also be implemented during the winter break.
-* Thus, another project - "Automatic OCaml code generation from Petri-Nets" - will be initiated in Spring 2024 as my CS 5278 Principles of Software Engineering (taught by Professor Yu Huang) final project.
+* Thus, another project - "Automatic Scala code generation from Petri-Nets" - will be initiated in Spring 2024 as my CS 5278 Principles of Software Engineering (taught by Professor Yu Huang) final project.
 * I have realised that I have initially proposed a project that can be divided into three sub-projects that are still very heavy, so I have split it up into three.
 
 ## Motivation of the project
-* Programming in low-level languages such as C, C++, Rust and Go is more challenging than in high-level languages such as Julia, Java, TypeScript and Ruby.
-* I have realized that it is possible to code differently, resulting in a code that is as efficient as C/C++.
-* My SWE methodology is different, though it is based on Xiaoming Liu et al.'s "Building reliable, high-performance communication systems from components" paper.
-* Have chosen the Raft consensus algorithm in distributed systems, as implementing consensus algorithms for distributed systems is difficult, especially in low-level languages.
+* Programming in Java takes a lot of time than other JVM languages.
+* I have realized that it is possible to code differently, resulting in a code that is as efficient as Java.
+* My SWE methodology is different, though it is inspired from Xiaoming Liu et al.'s "Building reliable, high-performance communication systems from components" paper.
+* Have chosen the Raft consensus algorithm in distributed systems, as implementing consensus algorithms for distributed systems is difficult in programming languages such as Java.
 
 ## Technologies Used
 1. Petri-nets
