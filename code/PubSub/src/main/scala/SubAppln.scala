@@ -37,7 +37,6 @@ class SubAppln extends SubUpcallHandler {
 
   override def onMessageReceived(message: String): Unit = {
     logger.info(s"Message received: $message")
-    // Implement additional logic for handling received messages if needed
   }
 
   override def onErrorOccurred(error: Throwable): Unit = {
