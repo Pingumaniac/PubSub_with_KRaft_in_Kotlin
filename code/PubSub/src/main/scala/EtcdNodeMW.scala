@@ -9,7 +9,7 @@ object EtcdNodeMW {
   private var currentTerm: Int = 0
   private val objectMapper = new ObjectMapper().registerModule(DefaultScalaModule)
 
-  // Initializes the middleware components for RAFT operations
+  // Initializes the middleware components for Etcd operations
   def init(host: String, port: Int, exchangeName: String): Unit = {
     val factory = new ConnectionFactory()
     factory.setHost(host)
@@ -27,7 +27,7 @@ object EtcdNodeMW {
     }
   }
 
-  // Conducts a leader election process as per RAFT
+  // Conducts a leader election process through Etcd
   def conduct_leader_election(exchangeName: String): Unit = {
     currentTerm += 1
     // Logic for leader election (simplified for this example)

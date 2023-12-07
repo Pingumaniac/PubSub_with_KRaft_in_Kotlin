@@ -1,6 +1,8 @@
 import com.rabbitmq.client._
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
+import mousio.etcd4j.EtcdClient
+import java.net.URI
 
 object DiscoveryMW {
   private var connection: Connection = _
@@ -8,6 +10,7 @@ object DiscoveryMW {
   private val objectMapper = new ObjectMapper().registerModule(DefaultScalaModule)
   private val exchangeName = "discovery_exchange"
   private val queueName = "discovery_queue"
+  private val etcdClient = new EtcdClient(URI.create("http://etcd-server:2379")) // Replace with actual Etcd server URI
 
   // Initialize connection and channel
   def init(host: String, port: Int): Unit = {
@@ -43,18 +46,19 @@ object DiscoveryMW {
     channel.basicConsume(queueName, true, consumer)
   }
 
-  // Replicates the service state to other nodes via RAFT (Placeholder)
+  // Replicates the service state to other nodes via Etcd (Placeholder)
   def replicate_state(): Unit = {
-    // Implement replication logic using RaftConsensusMW 
+    // Implement replication logic using EtcdConsensusMW
+
   }
 
   // Continuously monitors the health of the leader node (Placeholder)
   def monitor_leader_health(): Unit = {
-    // Implement monitoring logic, through interacting with RaftConsensusMW
+    // Implement monitoring logic, through interacting with EtcdConsensusMW
   }
 
   // Initiates a failover process in case of leader failure (Placeholder)
   def trigger_failover(): Unit = {
-    // Implement failover logic, through interacting with RaftNodeMW
+    // Implement failover logic, through interacting with EtcdNodeMW
   }
 }

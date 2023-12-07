@@ -31,7 +31,7 @@ object DiscoveryAppln {
 
   // Handle the leader election process
   def handle_leader_election(): Unit = {
-    // Involves interacting with RaftNodeMW or RaftConsensusMW
+    // Involves interacting with EtcdNodeMW or EtcdConsensusMW
   }
 
   // Apply a log entry to the service state
