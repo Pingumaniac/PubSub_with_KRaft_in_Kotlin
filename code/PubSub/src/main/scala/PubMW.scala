@@ -1,12 +1,11 @@
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import com.fasterxml.jackson.module.scala.experimental.ScalaObjectMapper
 import com.rabbitmq.client.{AMQP, Connection, ConnectionFactory, Channel, MessageProperties}
 
 object JsonSerializationUtil {
-  private val mapper = new ObjectMapper() with ScalaObjectMapper
+  private val mapper = new ObjectMapper() 
   mapper.registerModule(DefaultScalaModule)
-
+  
   def serializeToJsonBytes(obj: Any): Array[Byte] = {
     mapper.writeValueAsBytes(obj)
   }
