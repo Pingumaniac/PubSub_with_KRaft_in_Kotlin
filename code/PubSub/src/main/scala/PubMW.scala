@@ -1,20 +1,22 @@
+import com.rabbitmq.client.{Connection, ConnectionFactory, Channel, MessageProperties}
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
-import com.rabbitmq.client.{AMQP, Connection, ConnectionFactory, Channel, MessageProperties}
 
-object JsonSerializationUtil {
-  private val mapper = new ObjectMapper() 
-  mapper.registerModule(DefaultScalaModule)
-  
-  def serializeToJsonBytes(obj: Any): Array[Byte] = {
-    mapper.writeValueAsBytes(obj)
-  }
+// Define a trait for handling upcall events
+trait UpcallHandler {
+  def onMessagePublished(topic: String, message: String): Unit
+  def onErrorOccurred(error: Throwable): Unit
 }
 
 object PubMW {
   private var connection: Connection = _
   private var channel: Channel = _
   private var currentTopic: String = _
+  private var upcallHandler: Option[UpcallHandler] = None
+
+  // Initialize ObjectMapper for JSON serialization
+  private val mapper = new ObjectMapper()
+  mapper.registerModule(DefaultScalaModule)
 
   def connect_to_server(host: String, port: Int): Unit = {
     val factory = new ConnectionFactory()
@@ -30,18 +32,32 @@ object PubMW {
   }
 
   def publish_message(message: String): Unit = {
-    val serializedMessage = JsonSerializationUtil.serializeToJsonBytes(message)
-    val properties = MessageProperties.PERSISTENT_TEXT_PLAIN
+    try {
+      val serializedMessage = serializeToJsonBytes(message)
+      val properties = MessageProperties.PERSISTENT_TEXT_PLAIN
 
-    if (currentTopic.isEmpty) {
-      throw new IllegalStateException("Exchange not initialized")
+      if (currentTopic.isEmpty) {
+        throw new IllegalStateException("Exchange not initialized")
+      }
+
+      channel.basicPublish(currentTopic, "", properties, serializedMessage)
+      upcallHandler.foreach(_.onMessagePublished(currentTopic, message))
+    } catch {
+      case e: Throwable =>
+        upcallHandler.foreach(_.onErrorOccurred(e))
     }
+  }
 
-    channel.basicPublish(currentTopic, "", properties, serializedMessage)
+  def set_upcall_handle(handler: UpcallHandler): Unit = {
+    upcallHandler = Some(handler)
   }
 
   def close_connection(): Unit = {
     if (channel != null) channel.close()
     if (connection != null) connection.close()
+  }
+
+  private def serializeToJsonBytes(obj: Any): Array[Byte] = {
+    mapper.writeValueAsBytes(obj)
   }
 }

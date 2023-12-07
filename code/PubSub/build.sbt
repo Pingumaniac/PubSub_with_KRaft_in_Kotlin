@@ -8,7 +8,8 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       // Add RabbitMQ library dependency
       "com.rabbitmq" % "amqp-client" % "5.16.0",
-      "com.fasterxml.jackson.core" % "jackson-databind" % "2.13.1",
-      "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.13.1"
+      "com.fasterxml.jackson.core" % "jackson-databind" % "2.15.1",
+      "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.14.2",
+      "org.slf4j" % "slf4j-api" % "2.0.5"
     )
   )
