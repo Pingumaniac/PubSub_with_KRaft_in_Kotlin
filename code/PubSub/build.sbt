@@ -7,6 +7,8 @@ lazy val root = (project in file("."))
     name := "PubSub",
     libraryDependencies ++= Seq(
       // Add RabbitMQ library dependency
-      "com.rabbitmq" % "amqp-client" % "5.16.0"
+      "com.rabbitmq" % "amqp-client" % "5.16.0",
+      "com.fasterxml.jackson.core" % "jackson-databind" % "2.13.1",
+      "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.13.1"
     )
   )

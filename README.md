@@ -127,9 +127,11 @@ export PATH=$PATH:/opt/homebrew/sbin
 
 #### For Windows, run the following commands in the CLI, Powershell or Git Bash terminal:
 ```
+sbt addSbtPlugin "com.thesamet" % "sbt-protoc" % "1.6"
 ```
 #### For macOS, run the following commands in the Terminal:
 ```
+sbt addSbtPlugin "com.thesamet" % "sbt-protoc" % "1.6"
 ```
 
 ### 5. Install IntelliJ with the Scala plugin.

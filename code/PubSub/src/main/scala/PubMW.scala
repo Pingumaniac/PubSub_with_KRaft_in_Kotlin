@@ -1,34 +1,44 @@
-import com.rabbitmq.client.ConnectionFactory
-import com.rabbitmq.client.Connection
-import com.rabbitmq.client.Channel
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.module.scala.DefaultScalaModule
+import com.fasterxml.jackson.module.scala.experimental.ScalaObjectMapper
+import com.rabbitmq.client.{AMQP, Connection, ConnectionFactory, Channel, MessageProperties}
 
+object JsonSerializationUtil {
+  private val mapper = new ObjectMapper() with ScalaObjectMapper
+  mapper.registerModule(DefaultScalaModule)
+
+  def serializeToJsonBytes(obj: Any): Array[Byte] = {
+    mapper.writeValueAsBytes(obj)
+  }
+}
 
 object PubMW {
   private var connection: Connection = _
   private var channel: Channel = _
+  private var currentTopic: String = _
 
   def connect_to_server(host: String, port: Int): Unit = {
-    connection = ConnectionFactory().newConnection(host, port)
+    val factory = new ConnectionFactory()
+    factory.setHost(host)
+    factory.setPort(port)
+    connection = factory.newConnection()
     channel = connection.createChannel()
   }
 
   def setup_message_exchange(exchangeName: String): Unit = {
-    channel.exchangeDeclare(exchangeName, "fanout", durable = true)
+    channel.exchangeDeclare(exchangeName, "fanout", true)
+    currentTopic = exchangeName
   }
 
-  def publish_message(message: Any, exchangeName: String): Unit = {
-    val serializedMessage = message.toString().getBytes
-    channel.basicPublish(exchangeName, "", null, serializedMessage)
-  }
+  def publish_message(message: String): Unit = {
+    val serializedMessage = JsonSerializationUtil.serializeToJsonBytes(message)
+    val properties = MessageProperties.PERSISTENT_TEXT_PLAIN
 
-  def need_reconfig_for_topic(topic: String): Boolean = {
-    // Implement logic to determine if reconfiguration is needed based on current topic
-    // and provided topic
-  }
+    if (currentTopic.isEmpty) {
+      throw new IllegalStateException("Exchange not initialized")
+    }
 
-  def reconfigure_for_topic(topic: String): Unit = {
-    // Implement logic to reconfigure the exchange and associated resources
-    // based on the new topic
+    channel.basicPublish(currentTopic, "", properties, serializedMessage)
   }
 
   def close_connection(): Unit = {
