@@ -76,7 +76,7 @@ This approach promotes cleaner separation of concerns, improves anonymity and fa
 * setup: Function to declare exchange and queue for discovery
 * broadcast_discovery_request : Sends out a discovery request to find other services.
 * listen_for_discovery_responses : Listens for responses to discovery requests.
-* replicate_state : Replicates the service state to other nodes via RAFT.
+* replicate_state : Replicates the service state to other nodes via Etcd.
 * monitor_leader_health : Continuously monitors the health of the leader node.
 * trigger_failover : Initiates a failover process in case of leader failure.
 
