@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cffe026-9bef-4f9d-90e4-de9072bc32cd" name="Changes" comment="" />
+    <list default="true" id="8cffe026-9bef-4f9d-90e4-de9072bc32cd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scala_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$6801d6795f696f800598.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/DiscoveryAppln.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/DiscoveryAppln.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/DiscoveryMW.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/DiscoveryMW.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/EtcdNodeAppln.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/EtcdNodeAppln.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/EtcdNodeMW.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/EtcdNodeMW.scala" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,12 +51,16 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2ZGT2Dhkd9ksSR7fNWQaA9VzWII" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -59,12 +72,36 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "scala_project_settings_configurable.last_selected_tab_index": "7",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.scala.settings.ScalaProjectSettingsConfigurable",
+    "settings.editor.selected.configurable": "sbt.project.settings.configurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="ScalaProjectSettings">
+    <option name="intInjectionMapping">
+      <map>
+        <entry key="css" value="CSS" />
+        <entry key="html" value="HTML" />
+        <entry key="java" value="JAVA" />
+        <entry key="js" value="JavaScript" />
+        <entry key="json" value="JSON" />
+        <entry key="json5" value="JSON5" />
+        <entry key="less" value="LESS" />
+        <entry key="md" value="Markdown" />
+        <entry key="protobuf" value="protobuf" />
+        <entry key="scala" value="Scala" />
+        <entry key="sql" value="SQL" />
+        <entry key="sqlu" value="SQL" />
+        <entry key="svg" value="SVG" />
+        <entry key="xhtml" value="XHTML" />
+        <entry key="xml" value="XML" />
+        <entry key="xpath" value="XPath" />
+        <entry key="yaml" value="yaml" />
+      </map>
+    </option>
     <option name="scala3DisclaimerShown" value="true" />
   </component>
   <component name="SharedIndexes">
@@ -84,11 +121,16 @@
       <updated>1702047206375</updated>
       <workItem from="1702047207410" duration="89000" />
       <workItem from="1702048530696" duration="550000" />
+      <workItem from="1702064276017" duration="220000" />
+      <workItem from="1702064498297" duration="995000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

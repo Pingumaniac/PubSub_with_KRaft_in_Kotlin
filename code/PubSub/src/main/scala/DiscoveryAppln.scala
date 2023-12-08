@@ -1,5 +1,3 @@
-import EtcdConsensusMW
-
 import scala.collection.mutable
 
 object DiscoveryAppln {

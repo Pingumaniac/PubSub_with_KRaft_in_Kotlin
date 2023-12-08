@@ -3,7 +3,6 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import mousio.etcd4j.EtcdClient
 import java.net.URI
-import EtcdNodeMW
 
 object DiscoveryMW {
   private var connection: Connection = _

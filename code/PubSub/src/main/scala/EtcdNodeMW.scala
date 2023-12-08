@@ -2,8 +2,6 @@ import com.rabbitmq.client._
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 
-import EtcdConsensusMW;
-
 object EtcdNodeMW {
   private var connection: Connection = _
   private var channel: Channel = _
@@ -94,7 +92,7 @@ object EtcdNodeMW {
 
       val queueName = channel.queueDeclare().getQueue
       channel.queueBind(queueName, leaderExchangeName, "")
-      val consumer = new DefaultConsumer(channel) {
+      val consumer2 = new DefaultConsumer(channel) {
         override def handleDelivery(consumerTag: String, envelope: Envelope, properties: AMQP.BasicProperties, body: Array[Byte]): Unit = {
           responseReceived.set(true)
           val state = objectMapper.readValue(body, classOf[RaftConsensusMW.State])
@@ -102,7 +100,7 @@ object EtcdNodeMW {
           channel.queueDelete(queueName)
         }
       }
-      channel.basicConsume(queueName, true, consumer)
+      channel.basicConsume(queueName, true, consumer2)
 
       // Wait for the response with a timeout
       val executor = Executors.newSingleThreadExecutor()

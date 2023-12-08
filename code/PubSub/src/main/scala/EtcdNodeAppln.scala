@@ -51,7 +51,7 @@ object EtcdNodeAppln {
     newState match {
       case Leader => EtcdConsensusMW.start_consensus_process()
       case Follower => EtcdConsensusMW.start_follower_duties()
-      case Candidate => EtcdConsensusMW.conduct_leader_election()
+      case Candidate => EtcdNodeMW.conduct_leader_election()
     }
   }
 
