@@ -42,9 +42,9 @@ This approach promotes cleaner separation of concerns, improves anonymity and fa
 * handle_leader_election : Handles the process of leader election in case of failover.
 * apply_log_entry : Applies a log entry from the RAFT log to update the state.
 
-4. RaftNodeAppln.scala
-* initialize_node : Initializes the RAFT node for participating in the consensus.
-* propagate_update : Propagates updates to the RAFT log.
+4. EtcdNodeAppln.scala
+* initialize_node : Initializes the Etcd node for participating in the consensus.
+* propagate_update : Propagates updates to the Etcd log.
 * perform_health_check : Performs health checks on the leader node and initiates failover if needed.
 * handle_state_transition : Manages transitions between leader and follower states.
 * recover_from_failure : Handles the process of rejoining and syncing with the cluster after recovery.
@@ -80,14 +80,14 @@ This approach promotes cleaner separation of concerns, improves anonymity and fa
 * monitor_leader_health : Continuously monitors the health of the leader node.
 * trigger_failover : Initiates a failover process in case of leader failure.
 
-4. RaftNodeMW.scala
-* init : Initializes the middleware components for RAFT operations.
+4. EtcdNodeMW.scala
+* init : Initializes the middleware components for Etcd operations.
 * handle_log_replication  Handles the replication of log entries across nodes.
-* conduct_leader_election : Conducts a leader election process as per RAFT.
+* conduct_leader_election : Conducts a leader election process as per Etcd.
 * synchronize_state : Synchronizes the state with other nodes after failover or recovery.
 
-5. RaftConsensusMW.scala
-* init: Innitialize connection and channel for RAFT consensus operations
-* start_consensus_process : Starts the RAFT consensus process for decision making.
-* append_entry_to_log : Appends a new entry to the RAFT log.
+5. EtcdConsensusMW.scala
+* init: Innitialize connection and channel for Etcd consensus operations
+* start_consensus_process : Starts the Etcd consensus process for decision making.
+* append_entry_to_log : Appends a new entry to the Etcd log.
 * commit_entry : Commits an entry to the RAFT log after reaching consensus.
