@@ -11,7 +11,7 @@ Therefore, I sought a solution where publishers and subscribers remain anonymous
 
 To achieve this, I designed a middleware layer. Instead of directly using RabbitMQ, application logic (~Appln.scala files) interacts with the middleware's API (~MW.scala files). This lightweight pub/sub middleware sits on top of RabbitMQ, enabling anonymity.
 
-Furthermore, I've implemented warm-passive fault tolerance for the Discovery service using the Raft consensus protocol for coordination.
+Furthermore, I've implemented warm-passive fault tolerance for the Discovery service using the Etcd consensus protocol for coordination.
 
 Finally, shared code is organized in:
 * CommonAppln.scala: Holds methods used by other ~Appln.scala files.
@@ -38,9 +38,9 @@ This approach promotes cleaner separation of concerns, improves anonymity and fa
 3. DiscoveryAppln.scala
 * discover_services : Discovers available services in the network.
 * register_service : Registers a new service with the discovery system.
-* update_service_state : Updates the state of the service, used in sync with RAFT.
+* update_service_state : Updates the state of the service, used in sync with Etcd.
 * handle_leader_election : Handles the process of leader election in case of failover.
-* apply_log_entry : Applies a log entry from the RAFT log to update the state.
+* apply_log_entry : Applies a log entry from the Etcd log to update the state.
 
 4. EtcdNodeAppln.scala
 * initialize_node : Initializes the Etcd node for participating in the consensus.
@@ -50,7 +50,7 @@ This approach promotes cleaner separation of concerns, improves anonymity and fa
 * recover_from_failure : Handles the process of rejoining and syncing with the cluster after recovery.
 
 5. CommonAppln.scala
-* log_entry : Represents a log entry data structure used in the RAFT algorithm.
+* log_entry : Represents a log entry data structure used in the Etcd algorithm.
 * state_machine : Represents the state machine logic used across the application.
 * apply_log_entry : Applies a given log entry to the state machine.
 * get_current_state : Retrieves the current state of the state machine.
@@ -90,4 +90,4 @@ This approach promotes cleaner separation of concerns, improves anonymity and fa
 * init: Innitialize connection and channel for Etcd consensus operations
 * start_consensus_process : Starts the Etcd consensus process for decision making.
 * append_entry_to_log : Appends a new entry to the Etcd log.
-* commit_entry : Commits an entry to the RAFT log after reaching consensus.
+* commit_entry : Commits an entry to the Etcd log after reaching consensus.
