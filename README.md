@@ -1,4 +1,4 @@
-# PubSub_with_Raft_in_Scala
+# PubSub_with_Raft_in_Kotlin
 CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 
 ## About Member
@@ -29,9 +29,9 @@ CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 
 
 ### Modified goals of the project
-1. Develop and implement a Publish/Subscribe architecture utilizing Petri nets and the Scala programming language. This architecture leverages the Raft algorithm for the consensus protocol to achieve robust and scalable message delivery.
-2. Model a portion of the software system as Petri nets. This will enable the verification of the model's correctness, ensuring the system's functionality.
-3. Generate the initial, unoptimized Scala code in the RPC design pattern. This approach promotes a cleaner separation of concerns, improves anonymity and fault tolerance, and ultimately makes the system more robust and scalable.
+1. Create a Publish/Subscribe architecture using Petri nets and Kotlin, incorporating Apache Kafka and RabbitMQ. This architecture will utilize Kafka's distributed streaming capabilities along with the Raft consensus algorithm, as implemented in Kafka's KRaft mode, to ensure robust and scalable message delivery. The integration of Kafka provides a high-throughput, fault-tolerant messaging system, enhancing the overall performance and reliability of the architecture.
+2.  Use Petri nets to model key components of the software system. It focus on the interactions and coordination between Kafka and RabbitMQ within the Publish/Subscribe paradigm. Verify the model's correctness and ensure the system's functionality, particularly in terms of message flow, fault tolerance, and distributed coordination.
+3. Generate the initial, unoptimised Kotlin code that uses the Remote Procedure Call (RPC) design pattern. This codebase will lay the foundation for the system, emphasizing a clear separation of concerns. The RPC pattern, combined with Kafka's streaming and RabbitMQ's messaging capabilities, will enhance anonymity in communications and provide robust fault tolerance mechanisms. The goal is to build a system that is not only robust and scalable but also maintains clean and manageable code architecture.
 
 ### Future work
 * The 3-6th original goal will be done as future work (extension) during the Winter 2024 break with Professor Abhishek Dubey.
@@ -47,15 +47,16 @@ CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 
 ## Technologies Used
 1. Petri-nets
-2. Scala
+2. Kotlin
 3. RabbitMQ
-4. Protobuf
-5. IntelliJ IDEA
+4. JSON
+5. Apache Kafka
+6. IntelliJ IDEA
 
 ## Instructions for checking out the latest stable version
 
 ### Method 1:
-1. Open the main page for our GitHub repository: https://github.com/Pingumaniac/PubSub_with_Raft_in_Scala
+1. Open the main page for our GitHub repository: https://github.com/Pingumaniac/PubSub_with_Raft_in_Kotlin
 2. Click the following button: <img src = "https://user-images.githubusercontent.com/63883314/115416097-69ade280-a232-11eb-8401-8c41362ab4c2.png" width="44" height="14">
 3. Click the 'Download ZIP' option.
 4. Unzip the folder.
@@ -66,7 +67,7 @@ CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 3.  Move to the preferred directory.
 4.  Next, type the following:
 ```
-git clone https://github.com/Pingumaniac/PubSub_with_Raft_in_Scala.git
+git clone https://github.com/Pingumaniac/PubSub_with_Raft_in_Kotlin.git
 ```
 5. All the codes and documents in the repository can be accessed.
 
@@ -77,12 +78,8 @@ git type
 
 ## How to set up for running this software
 
-### 1. Please make sure you have downloaded Scala.
-
-* Here is the URL for downloading the Scala installer for Windows, macOS, Linux, and others:
-https://www.scala-lang.org/download/
-* To install Linux on Windows so that you can execute Scala through Linux on Windows, please download Windows Subsystem for Linux (WSL):
-https://docs.microsoft.com/en‐us/windows/wsl/install
+### 1. Please make sure you have downloaded IntelliJ.
+* Please visit the following website for more detailed instructions: https://www.jetbrains.com/idea/
 
 ### 2. Install Erlang on your computer.
 * As RabbitMQ is implemented in Erlang, you must download Erlang to your computer.
@@ -124,10 +121,7 @@ export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:/opt/homebrew/sbin
 ```
 
-### 4. Install IntelliJ with the Scala plugin.
-* Please visit the following website for more detailed instructions: https://www.jetbrains.com/help/idea/discover-intellij-idea-for-scala.html
-
 ## Bug tracking
 
 * All users can view and report a bug in the "GitHub Issues" of our repository.
-* Here is the URL for viewing and reporting a list of bugs: https://github.com/Pingumaniac/PubSub_with_Raft_in_Scala/issues
+* Here is the URL for viewing and reporting a list of bugs: https://github.com/Pingumaniac/PubSub_with_Raft_in_Kotlin/issues
