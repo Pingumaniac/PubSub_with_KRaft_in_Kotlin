@@ -21,9 +21,9 @@ CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 ## About the project
 ### Original goals of the project
 1. Define the Raft consensus algorithm for distributed systems in Petri-nets, establishing a robust framework for system interactions.
-2. Generate the unoptimized code in Scala.
-3. Perform code verification and optimization using the Stainless tool, enhancing system efficiency and reliability.
-4. Compare the performance of the unoptimized Scala code with optimized versions.
+2. Generate the unoptimized code in Kotlin.
+3. Perform code verification and optimization using formal verificaiton tools, enhancing system efficiency and reliability.
+4. Compare the performance of the unoptimized Kotlin code with optimized versions.
 5. Describe the testing methodology employed to ensure the correctness and robustness of the system.
 6. Highlight the potential for horizontal scaling through Raft’s leader election mechanism and log replication.
 
