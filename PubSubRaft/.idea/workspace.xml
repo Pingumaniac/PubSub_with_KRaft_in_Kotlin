@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="714555bc-691e-42e7-95de-9925f7e2dd30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/DiscoveryAppln.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/DiscoveryMW.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/PubAppln.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/PubMW.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/SubAppln.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/SubMW.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../code/PubSub/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../code/PubSub/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,24 +42,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Gradle.Build PubSubRaft.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/youngjaemoon/Desktop/PubSub_with_Raft_in_Scala/PubSubRaft/src/main/kotlin/Main.kt&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Gradle.Build PubSubRaft.executor": "Run",
+    "Gradle.Building Gradle Dependencies.executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/youngjaemoon/Desktop/PubSub_with_Raft_in_Kotlin/PubSubRaft",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/youngjaemoon/Desktop/PubSub_with_Raft_in_Scala/PubSubRaft/src/main/kotlin/Main.kt",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.MainKt" />
@@ -116,6 +102,7 @@
       <workItem from="1702142810391" duration="811000" />
       <workItem from="1702143662654" duration="1376000" />
       <workItem from="1702145364233" duration="2790000" />
+      <workItem from="1702151305467" duration="96000" />
     </task>
     <servers />
   </component>
