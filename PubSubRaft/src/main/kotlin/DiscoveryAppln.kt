@@ -9,7 +9,7 @@ data class ServiceState(val status: String, val additionalInfo: Map<String, Stri
 data class LogEntry(val serviceName: String, val state: String, val additionalInfo: Map<String, String>)
 
 class DiscoveryAppln : DiscoveryUpcallHandler {
-    private val logger = LoggerFactory.getLogger(DiscoveryAppln::class.java)
+    var logger = LoggerFactory.getLogger(DiscoveryAppln::class.java)
     private val discoveredServices = mutableSetOf<ServiceInfo>()
     private val mwObj = DiscoveryMW
 
