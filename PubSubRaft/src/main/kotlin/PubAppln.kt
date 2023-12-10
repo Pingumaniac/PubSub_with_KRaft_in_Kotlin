@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory
 import kotlinx.cli.*
 import kotlinx.serialization.*
 import kotlinx.serialization.json.*
-import org.slf4j.MDC.put
 import java.lang.Exception
 
 class PubAppln : UpcallHandler {
