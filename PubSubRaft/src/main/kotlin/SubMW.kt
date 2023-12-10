@@ -12,11 +12,11 @@ interface SubUpcallHandler {
 
 object SubMW {
     private var connection: Connection? = null
-    private var channel: Channel? = null
-    private var queueName: String? = null
+    var channel: Channel? = null
+    var queueName: String? = null
     private var upcallHandler: SubUpcallHandler? = null
 
-    private val objectMapper: ObjectMapper = jacksonObjectMapper()
+    val objectMapper: ObjectMapper = jacksonObjectMapper()
 
     fun connectToServer(host: String, port: Int) {
         val factory = ConnectionFactory()

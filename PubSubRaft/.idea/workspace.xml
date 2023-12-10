@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="714555bc-691e-42e7-95de-9925f7e2dd30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/PubApplnTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/PubMWTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/SubApplnTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/SubMWTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/PubAppln.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/PubAppln.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/PubMW.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/PubMW.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/SubAppln.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/SubAppln.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/SubMW.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/SubMW.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/PubMWTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/PubMWTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +53,7 @@
     "Gradle.Build PubSubRaft.executor": "Run",
     "Gradle.Building Gradle Dependencies.executor": "Run",
     "Gradle.PubApplnTest.executor": "Run",
+    "Gradle.PubMWTest.executor": "Run",
     "Gradle.SubApplnTest.executor": "Run",
     "Kotlin.DiscoveryApplnKt.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
@@ -122,7 +120,7 @@
       <workItem from="1702195895045" duration="64000" />
       <workItem from="1702195960819" duration="2603000" />
       <workItem from="1702220662558" duration="1119000" />
-      <workItem from="1702222396641" duration="677000" />
+      <workItem from="1702222396641" duration="1428000" />
     </task>
     <servers />
   </component>

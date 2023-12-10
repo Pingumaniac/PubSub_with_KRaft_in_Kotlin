@@ -15,11 +15,9 @@ class PubMWTest {
     fun testConnectToServer() {
         val mockConnection = mock(Connection::class.java)
         val mockChannel = mock(Channel::class.java)
-
         val factory = mock(ConnectionFactory::class.java)
         `when`(factory.newConnection()).thenReturn(mockConnection)
         `when`(mockConnection.createChannel()).thenReturn(mockChannel)
-
         PubMW.connectToServer("localhost", 5672)
         verify(factory).host = "localhost"
         verify(factory).port = 5672
