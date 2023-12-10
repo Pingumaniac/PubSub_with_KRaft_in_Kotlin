@@ -1,18 +1,27 @@
 package org.example
 
-//TIP Press <shortcut raw="SHIFT"/> twice to open the Search Everywhere dialog and type <b>show whitespaces</b>,
-// then press <shortcut raw="ENTER"/>. You can now see whitespace characters in your code.
 fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+    // Initialize Publisher Application
+    val pubApp = PubAppln()
+    pubApp.initialize("pubapp", 3, listOf("python", "ruby", "typescript"), 1000, 1)
 
-    //TIP click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-    // To <b>Run</b> code, press <shortcut actionId="Run"/> or
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
-    }
+    // Initialize Subscriber Application
+    val subApp = SubAppln()
+
+    // Initialize Discovery Application
+    val discoveryApp = DiscoveryAppln()
+
+    // Initialize Kafka with default local broker address
+    DiscoveryMW.initKafka("localhost:9092")
+
+    // Start each application in separate threads
+    val pubThread = Thread { pubApp.publish("hello") }
+    val subThread = Thread { subApp.initialize("subapp",  setOf("python", "ruby", "typescript")) }
+    val discoveryThread = Thread { discoveryApp.discoverServices() }
+
+    pubThread.start()
+    subThread.start()
+    discoveryThread.start()
+
+    println("All applications have been started.")
 }

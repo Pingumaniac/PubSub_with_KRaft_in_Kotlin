@@ -16,7 +16,7 @@ class SubAppln : SubUpcallHandler {
     private var name: String? = null
     private var subscribedExchanges: MutableSet<String> = mutableSetOf()
 
-    fun init(name: String, exchanges: Set<String>) {
+    fun initialize(name: String, exchanges: Set<String>) {
         this.name = name
         this.subscribedExchanges = exchanges.toMutableSet()
     }
@@ -59,7 +59,7 @@ class SubAppln : SubUpcallHandler {
     }
 }
 
-data class subCLIArgs(
+data class SubCLIArgs(
     val name: String,
     val addr: String,
     val port: Int,
@@ -71,7 +71,7 @@ data class subCLIArgs(
     val loglevel: Int
 )
 
-fun subParseCLIArgs(args: Array<String>): subCLIArgs {
+fun subParseCLIArgs(args: Array<String>): SubCLIArgs {
     val parser = ArgParser("SubAppln")
     val name by parser.option(ArgType.String, shortName = "n", description = "Some name assigned to us. Keep it unique per subscriber").default("sub")
     val addr by parser.option(ArgType.String, shortName = "a", description = "IP addr of this subscriber to advertise").default("localhost")
@@ -85,7 +85,7 @@ fun subParseCLIArgs(args: Array<String>): subCLIArgs {
 
     parser.parse(args)
 
-    return subCLIArgs(name, addr, port, discovery, numTopics, config, frequency, iters, loglevel)
+    return SubCLIArgs(name, addr, port, discovery, numTopics, config, frequency, iters, loglevel)
 }
 
 fun main(args: Array<String>) {
@@ -96,7 +96,8 @@ fun main(args: Array<String>) {
         logger.info("Main - acquire a child logger and then log messages in the child")
         val subApp = SubAppln()
         val exchanges = setOf("python", "ruby", "typescript")
-        subApp.init(parsedArgs.name, exchanges)
+        subApp.initialize(parsedArgs.name, exchanges)
+        subApp.dump()
     } catch (e: Exception) {
         logger.error("Exception caught in main - ${e.message}", e)
     }

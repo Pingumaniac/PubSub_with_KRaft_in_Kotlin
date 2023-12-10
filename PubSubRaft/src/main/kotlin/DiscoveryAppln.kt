@@ -1,6 +1,8 @@
 package org.example
 
 import org.slf4j.LoggerFactory
+import kotlinx.cli.*
+import java.lang.Exception
 
 data class ServiceInfo(val name: String, val address: String, val port: Int, var state: ServiceState)
 data class ServiceState(val status: String, val additionalInfo: Map<String, String>)
@@ -36,7 +38,7 @@ class DiscoveryAppln : DiscoveryUpcallHandler {
         discoveredServices.add(serviceInfo)
     }
 
-    fun updateServiceState(serviceInfo: ServiceInfo, state: ServiceState) {
+    private fun updateServiceState(serviceInfo: ServiceInfo, state: ServiceState) {
         logger.info("Updating state for service: ${serviceInfo.name}")
         val updatedServiceInfo = serviceInfo.copy(state = state)
         mwObj.broadcastDiscoveryRequest(mapOf("update_service_state" to updatedServiceInfo.name, "new_state" to state.status))
@@ -72,5 +74,46 @@ class DiscoveryAppln : DiscoveryUpcallHandler {
         } catch (e: Exception) {
             logger.error("Error during dump", e)
         }
+    }
+}
+
+data class DiscoveryCLIArgs(
+    val discoveryPort: Int,
+    val loglevel: Int
+)
+
+fun discoveryParseCLIArgs(args: Array<String>): DiscoveryCLIArgs {
+    val parser = ArgParser("DiscoveryAppln")
+    val discoveryPort by parser.option(ArgType.Int, shortName = "p", description = "Port number for discovery service").default(5555)
+    val loglevel by parser.option(ArgType.Int, shortName = "l", description = "logging level").default(20)
+    parser.parse(args)
+    return DiscoveryCLIArgs(discoveryPort, loglevel)
+}
+
+fun main(args: Array<String>) {
+    val parsedArgs = discoveryParseCLIArgs(args)
+    val logger = LoggerFactory.getLogger("DiscoveryAppln")
+
+    try {
+        logger.info("Main - acquire a child logger and then log messages in the child")
+        // Initialize and configure the DiscoveryAppln
+        val discoveryApp = DiscoveryAppln()
+
+        logger.info("Discovery Service Port: ${parsedArgs.discoveryPort}")
+        logger.info("Logging Level: ${parsedArgs.loglevel}")
+
+        // Initialize Kafka with default local broker address
+        DiscoveryMW.initKafka("localhost:9092")
+
+        discoveryApp.discoverServices()
+        val serviceInfo = ServiceInfo("ExampleService", "localhost", 8080, ServiceState("Active", emptyMap()))
+        discoveryApp.registerService(serviceInfo)
+        discoveryApp.handleLeaderElection()
+        val logEntry = LogEntry("ExampleService", "Inactive", mapOf("reason" to "maintenance"))
+        discoveryApp.applyLogEntry(logEntry)
+        discoveryApp.dump()
+
+    } catch (e: Exception) {
+        logger.error("Exception caught in main - ${e.message}", e)
     }
 }

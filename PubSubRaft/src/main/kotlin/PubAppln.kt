@@ -81,7 +81,7 @@ class PubAppln : UpcallHandler {
     }
 }
 
-data class pubCLIArgs(
+data class PubCLIArgs(
     val name: String,
     val addr: String,
     val port: Int,
@@ -92,7 +92,7 @@ data class pubCLIArgs(
     val iters: Int,
     val loglevel: Int
 )
-fun pubParseCLIArgs(args: Array<String>): pubCLIArgs {
+fun pubParseCLIArgs(args: Array<String>): PubCLIArgs {
     val parser = ArgParser("PubAppln")
     val name by parser.option(ArgType.String, shortName = "n", description = "Some name assigned to us. Keep it unique per publisher").default("pub")
     val addr by parser.option(ArgType.String, shortName = "a", description = "IP addr of this publisher to advertise").default("localhost")
@@ -106,7 +106,7 @@ fun pubParseCLIArgs(args: Array<String>): pubCLIArgs {
 
     parser.parse(args)
 
-    return pubCLIArgs(name, addr, port, discovery, numTopics, config, frequency, iters, loglevel)
+    return PubCLIArgs(name, addr, port, discovery, numTopics, config, frequency, iters, loglevel)
 }
 
 fun main(args: Array<String>) {
@@ -129,6 +129,7 @@ fun main(args: Array<String>) {
         pubApp.configurePublisher(settings)
         logger.debug("Main: invoke the publisher application's main process")
         pubApp.publish("hello")
+        pubApp.dump()
 
     } catch (e: Exception) {
         logger.error("Exception caught in main - ${e.message}", e)
