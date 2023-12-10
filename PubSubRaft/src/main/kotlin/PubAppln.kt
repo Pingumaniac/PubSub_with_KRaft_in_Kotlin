@@ -11,11 +11,11 @@ import java.lang.Exception
 class PubAppln : UpcallHandler {
     private val logger: Logger = LoggerFactory.getLogger(javaClass)
     private val mwObj = PubMW
-    private var name: String? = null
-    private var numTopics: Int = 0
-    private var topicList: List<String> = listOf()
-    private var iters: Int = 0
-    private var frequency: Int = 0
+    var name: String? = null
+    var numTopics: Int = 0
+    var topicList: List<String> = listOf()
+    var iters: Int = 0
+    var frequency: Int = 0
 
     init {
         mwObj.setUpcallHandler(this)

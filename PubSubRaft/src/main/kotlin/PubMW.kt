@@ -16,12 +16,12 @@ interface UpcallHandler {
 
 object PubMW {
     private var connection: Connection? = null
-    private var channel: Channel? = null
-    private var currentTopic: String? = null
+    var channel: Channel? = null
+    var currentTopic: String? = null
     private var upcallHandler: UpcallHandler? = null
 
     // Initialize ObjectMapper for JSON serialization
-    private val mapper: ObjectMapper = jacksonObjectMapper().apply {
+    var mapper: ObjectMapper = jacksonObjectMapper().apply {
         registerKotlinModule()
     }
 
@@ -61,7 +61,7 @@ object PubMW {
         connection?.close()
     }
 
-    private fun serializeToJsonBytes(obj: Any): ByteArray {
+    fun serializeToJsonBytes(obj: Any): ByteArray {
         return mapper.writeValueAsBytes(obj)
     }
 }

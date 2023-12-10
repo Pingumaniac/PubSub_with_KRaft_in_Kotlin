@@ -7,7 +7,7 @@ import kotlinx.serialization.*
 import kotlinx.serialization.json.*
 
 class SubAppln : SubUpcallHandler {
-    private val logger: Logger = LoggerFactory.getLogger(javaClass)
+    val logger: Logger = LoggerFactory.getLogger(javaClass)
     private val mwObj = SubMW
 
     init {
@@ -15,8 +15,8 @@ class SubAppln : SubUpcallHandler {
     }
 
     // State variables
-    private var name: String? = null
-    private var subscribedExchanges: MutableSet<String> = mutableSetOf()
+    var name: String? = null
+    var subscribedExchanges: MutableSet<String> = mutableSetOf()
 
     fun initialize(name: String, exchanges: Set<String>) {
         this.name = name
