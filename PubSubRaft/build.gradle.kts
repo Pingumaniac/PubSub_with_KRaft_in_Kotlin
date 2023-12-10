@@ -16,6 +16,8 @@ dependencies {
     // Jackson for JSON processing
     implementation("com.fasterxml.jackson.core:jackson-databind:2.12.2.7.1")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+
     // Apache Kafka
     implementation("org.apache.kafka:kafka-clients:3.3.0")
     // cli

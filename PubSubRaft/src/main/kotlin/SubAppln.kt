@@ -3,6 +3,8 @@ package org.example
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import kotlinx.cli.*
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
 
 class SubAppln : SubUpcallHandler {
     private val logger: Logger = LoggerFactory.getLogger(javaClass)
@@ -41,7 +43,17 @@ class SubAppln : SubUpcallHandler {
     }
 
     override fun onMessageReceived(message: String) {
-        logger.info("Message received: $message")
+        try {
+            val json = Json.parseToJsonElement(message)
+            if (json is JsonObject) {
+                val parsedMessage = json.toString()
+                logger.info("JSON Message received: $parsedMessage")
+            } else {
+                logger.info("Non-JSON message received: $message")
+            }
+        } catch (e: SerializationException) {
+            logger.error("Error deserializing message: $message", e)
+        }
     }
 
     override fun onErrorOccurred(error: Throwable) {

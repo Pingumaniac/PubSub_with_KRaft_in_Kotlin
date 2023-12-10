@@ -15,7 +15,7 @@ fun main() {
     DiscoveryMW.initKafka("localhost:9092")
 
     // Start each application in separate threads
-    val pubThread = Thread { pubApp.publish("hello") }
+    val pubThread = Thread { pubApp.publish("ruby", "rails") }
     val subThread = Thread { subApp.initialize("subapp",  setOf("python", "ruby", "typescript")) }
     val discoveryThread = Thread { discoveryApp.discoverServices() }
 

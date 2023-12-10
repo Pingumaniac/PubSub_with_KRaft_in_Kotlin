@@ -3,6 +3,9 @@ package org.example
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import kotlinx.cli.*
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+import org.slf4j.MDC.put
 import java.lang.Exception
 
 class PubAppln : UpcallHandler {
@@ -34,10 +37,21 @@ class PubAppln : UpcallHandler {
         return this
     }
 
-    fun publish(message: Any): PubAppln {
-        val serializedMessage: String = serializeMessage(message)
+    fun publish(topic: String, messageContent: String): PubAppln {
+        val serializedMessage: String = serializeMessageToJson(topic, messageContent)
         mwObj.publishMessage(serializedMessage)
         return this
+    }
+
+    private fun serializeMessageToJson(topic: String, messageContent: String): String {
+        val json = Json { prettyPrint = true }
+        val message = buildJsonObject {
+            put("topic", topic) // Update this as needed, possibly as a method parameter
+            put("content", messageContent)
+            put("datetime", java.time.LocalDate.now().toString()) // Using java.time.LocalDate for the current date
+            put("publisher", name ?: "Unknown")
+        }
+        return json.encodeToString(message)
     }
 
     fun changeTopic(newTopic: String): PubAppln {
@@ -128,7 +142,7 @@ fun main(args: Array<String>) {
         val settings = mapOf("host" to parsedArgs.addr, "port" to parsedArgs.port.toString())
         pubApp.configurePublisher(settings)
         logger.debug("Main: invoke the publisher application's main process")
-        pubApp.publish("hello")
+        pubApp.publish("python", "fast api")
         pubApp.dump()
 
     } catch (e: Exception) {
