@@ -1,4 +1,4 @@
-# PubSub_with_Raft_in_Kotlin
+# PubSub_with_KRaft_in_Kotlin
 CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 
 ## About Member
@@ -36,7 +36,7 @@ CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 ### Future work
 * The 3-6th original goal will be done as future work (extension) during the Winter 2024 break with Professor Abhishek Dubey.
 * More complex testing methods (e.g., writing unit tests, setting up Docker, Kubernetes) can also be implemented during the winter break.
-* Thus, another project - "Automatic Scala code generation from Petri-Nets" - will be initiated in Spring 2024 as my CS 5278 Principles of Software Engineering (taught by Professor Yu Huang) final project.
+* Thus, another project - "Automatic Kotlin code generation from Petri-Nets" - will be initiated in Spring 2024 as my CS 5278 Principles of Software Engineering (taught by Professor Yu Huang) final project.
 * I have realised that I have initially proposed a project that can be divided into three sub-projects that are still very heavy, so I have split it up into three.
 
 ## Motivation of the project
@@ -56,7 +56,7 @@ CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 ## Instructions for checking out the latest stable version
 
 ### Method 1:
-1. Open the main page for our GitHub repository: https://github.com/Pingumaniac/PubSub_with_Raft_in_Kotlin
+1. Open the main page for our GitHub repository: https://github.com/Pingumaniac/PubSub_with_KRaft_in_Kotlin
 2. Click the following button: <img src = "https://user-images.githubusercontent.com/63883314/115416097-69ade280-a232-11eb-8401-8c41362ab4c2.png" width="44" height="14">
 3. Click the 'Download ZIP' option.
 4. Unzip the folder.
@@ -67,7 +67,7 @@ CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 3.  Move to the preferred directory.
 4.  Next, type the following:
 ```
-git clone https://github.com/Pingumaniac/PubSub_with_Raft_in_Kotlin.git
+git clone https://github.com/Pingumaniac/PubSub_with_KRaft_in_Kotlin.git
 ```
 5. All the codes and documents in the repository can be accessed.
 
@@ -124,4 +124,4 @@ export PATH=$PATH:/opt/homebrew/sbin
 ## Bug tracking
 
 * All users can view and report a bug in the "GitHub Issues" of our repository.
-* Here is the URL for viewing and reporting a list of bugs: https://github.com/Pingumaniac/PubSub_with_Raft_in_Kotlin/issues
+* Here is the URL for viewing and reporting a list of bugs: https://github.com/Pingumaniac/PubSub_with_KRaft_in_Kotlin/issues
