@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="714555bc-691e-42e7-95de-9925f7e2dd30" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/DiscoveryMWTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/DiscoveryAppln.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/DiscoveryAppln.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/DiscoveryMW.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/DiscoveryMW.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/SubMWTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/SubMWTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +120,7 @@
       <workItem from="1702195960819" duration="2603000" />
       <workItem from="1702220662558" duration="1119000" />
       <workItem from="1702222396641" duration="1870000" />
-      <workItem from="1702224343008" duration="31000" />
+      <workItem from="1702224343008" duration="496000" />
     </task>
     <servers />
   </component>

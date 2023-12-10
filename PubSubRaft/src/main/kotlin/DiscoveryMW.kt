@@ -28,17 +28,17 @@ object DiscoveryMW {
     private val logger: Logger = LoggerFactory.getLogger(DiscoveryMW::class.java)
     private var connection: Connection? = null
     private var channel: Channel? = null
-    private val objectMapper: ObjectMapper = jacksonObjectMapper()
-    private lateinit var kafkaProducer: KafkaProducer<String, String>
+    val objectMapper: ObjectMapper = jacksonObjectMapper()
+    lateinit var kafkaProducer: KafkaProducer<String, String>
     private lateinit var kafkaConsumer: KafkaConsumer<String, String>
-    private val discoveryTopic = "discovery_topic"
-    private val stateReplicationTopic = "state_replication_topic"
-    private val leaderHealthTopic = "leader_health_topic"
+    val discoveryTopic = "discovery_topic"
+    val stateReplicationTopic = "state_replication_topic"
+    val leaderHealthTopic = "leader_health_topic"
     private var upcallHandler: DiscoveryUpcallHandler? = null
     private var currentTerm = 0
     private var isCandidate = false
     private var votedFor: String? = null
-    private var nodeIdentifier = "unique_node_identifier" // Replace with actual node identifier
+    var nodeIdentifier = "unique_node_identifier" // Replace with actual node identifier
     private val majorityCount = 3 // Set according to your cluster size
     @Volatile private var heartbeatMonitoringThread: Thread? = null
     private var isLeader = false
@@ -186,7 +186,7 @@ object DiscoveryMW {
         heartbeatMonitoringThread?.start()
     }
 
-    private fun broadcastVoteRequest(term: Int) {
+    fun broadcastVoteRequest(term: Int) {
         val voteRequest = objectMapper.writeValueAsString(VoteRequest(term, nodeIdentifier))
         kafkaProducer.send(ProducerRecord(discoveryTopic, "vote", voteRequest))
     }
