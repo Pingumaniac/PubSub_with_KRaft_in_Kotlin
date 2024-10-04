@@ -14,36 +14,25 @@ CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 * Email: abhishek.dubey@Vanderbilt.edu
 
 ## Acknowledgements
+* Thanks to Professor Abhishek Dubey for teaching me CS 6376 Foundations of Hybrid and Embedded Systems.
 * Thanks to Professor Aniruddha Gokhale for teaching me CS 6381 Distributed Systems Principles.
 * Thanks to Professor Taylor Johnson for teaching me CS 6315 Automated Verification.
-* Thanks to Professor Abhishek Dubey for teaching me CS 6376 Foundations of Hybrid and Embedded Systems.
 
 ## About the project
-### Original goals of the project
-1. Define the Raft consensus algorithm for distributed systems in Petri-nets, establishing a robust framework for system interactions.
-2. Generate the unoptimized code in Kotlin.
-3. Perform code verification and optimization using formal verificaiton tools, enhancing system efficiency and reliability.
-4. Compare the performance of the unoptimized Kotlin code with optimized versions.
-5. Describe the testing methodology employed to ensure the correctness and robustness of the system.
-6. Highlight the potential for horizontal scaling through Raft’s leader election mechanism and log replication.
-
-
-### Modified goals of the project
+### Goals of the project
 1. Create a Publish/Subscribe architecture using Petri nets and Kotlin, incorporating Apache Kafka and RabbitMQ. Use Kafka's distributed streaming capabilities along with the Raft consensus algorithm, as implemented in Kafka's KRaft mode, to ensure robust and scalable message delivery. Integreate Kafka to provide a high-throughput, fault-tolerant messaging system, enhancing the overall performance and reliability of the architecture.
 2.  Use Petri nets to model key components of the software system. It focus on the interactions and coordination between Kafka and RabbitMQ within the Publish/Subscribe paradigm. Verify the model's correctness and ensure the system's functionality.
 3. Generate the initial, unoptimised Kotlin code that uses the Remote Procedure Call (RPC) design pattern. This codebase will lay the foundation for the system, emphasizing a clear separation of concerns. The RPC pattern, combined with Kafka's streaming and RabbitMQ's messaging capabilities, will enhance anonymity in communications and provide robust fault tolerance mechanisms.
 
 ### Future work
-* The 3-6th original goal will be done as future work (extension) during the Winter 2024 break with Professor Abhishek Dubey.
 * More complex testing methods (e.g., writing unit tests, setting up Docker, Kubernetes) can also be implemented during the winter break.
-* Thus, another project - "Automatic Kotlin code generation from Petri-Nets" - will be initiated in Spring 2024 as my CS 5278 Principles of Software Engineering (taught by Professor Yu Huang) final project.
-* I have realised that I have initially proposed a project that can be divided into three sub-projects that are still very heavy, so I have split it up into three.
 
 ## Motivation of the project
 * Programming in Java takes a lot of time than other JVM languages.
 * I have realized that it is possible to code differently, resulting in a code that is as efficient as Java.
 * My SWE methodology is different, though it is inspired from Xiaoming Liu et al.'s "Building reliable, high-performance communication systems from components" paper.
 * Have chosen the Raft consensus algorithm in distributed systems, as implementing consensus algorithms for distributed systems is difficult in programming languages such as Java.
+* Apache Kafka uses KRaft consensus algorithm which is a variant of Raft.
 
 ## Technologies Used
 1. Petri-nets
@@ -56,7 +45,7 @@ CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 ## Instructions for checking out the latest stable version
 
 ### Method 1:
-1. Open the main page for our GitHub repository: https://github.com/Pingumaniac/PubSub_with_KRaft_in_Kotlin
+1. Open the main page for our GitHub repository: https://github.com/Pingumaniac/Scalable_and_Anonymous_PubSub_in_Kotlin
 2. Click the following button: <img src = "https://user-images.githubusercontent.com/63883314/115416097-69ade280-a232-11eb-8401-8c41362ab4c2.png" width="44" height="14">
 3. Click the 'Download ZIP' option.
 4. Unzip the folder.
@@ -67,7 +56,7 @@ CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 3.  Move to the preferred directory.
 4.  Next, type the following:
 ```
-git clone https://github.com/Pingumaniac/PubSub_with_KRaft_in_Kotlin.git
+git clone https://github.com/Pingumaniac/Scalable_and_Anonymous_PubSub_in_Kotlin.git
 ```
 5. All the codes and documents in the repository can be accessed.
 
@@ -124,4 +113,4 @@ export PATH=$PATH:/opt/homebrew/sbin
 ## Bug tracking
 
 * All users can view and report a bug in the "GitHub Issues" of our repository.
-* Here is the URL for viewing and reporting a list of bugs: https://github.com/Pingumaniac/PubSub_with_KRaft_in_Kotlin/issues
+* Here is the URL for viewing and reporting a list of bugs: https://github.com/Pingumaniac/Scalable_and_Anonymous_PubSub_in_Kotlin/issues
