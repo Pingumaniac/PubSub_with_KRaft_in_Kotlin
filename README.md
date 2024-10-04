@@ -1,4 +1,4 @@
-# PubSub_with_KRaft_in_Kotlin
+# Scalable_and_Anonymous_PubSub_in_Kotlin
 CS 6376 Foundations of Hybrid and Embedded Systems Final Project
 
 ## About Member
